@@ -1,9 +1,5 @@
 /// @description Insert description here
 // You can write your code in this editor
-/*
-
-*/
-
 switch(state)
 {
 	case PLAYERSTATES.IDLE:
@@ -120,7 +116,7 @@ switch(state)
 			attack = instance_create_layer(x + x_offset, y + y_offset, "attack", oAttack)
 			attack.rotation = rotation
 			state = PLAYERSTATES.ATTACK
-			alarm[0] = 5
+			alarm[0] = attack.lifetime
 			break;
 		}
 		break;
@@ -192,7 +188,7 @@ switch(state)
 			attack = instance_create_layer(x + x_offset, y + y_offset, "attack", oAttack)
 			attack.rotation = rotation
 			state = PLAYERSTATES.ATTACK
-			alarm[0] = 5
+			alarm[0] = attack.lifetime
 			break;
 		}
 		if(global.move_left and global.move_up)         facing = FACING.UPLEFT

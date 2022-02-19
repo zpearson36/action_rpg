@@ -1,5 +1,3 @@
 /// @description Insert description here
 // You can write your code in this editor
-rotation = 0
-lifetime = 3
-damage = 1
+if(_health <= 0) instance_destroy()
