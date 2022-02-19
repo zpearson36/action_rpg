@@ -2,11 +2,13 @@
   "resources": [
     {"id":{"name":"sPC","path":"sprites/sPC/sPC.yy",},"order":1,},
     {"id":{"name":"rLoadScreen","path":"rooms/rLoadScreen/rLoadScreen.yy",},"order":1,},
+    {"id":{"name":"sAttack","path":"sprites/sAttack/sAttack.yy",},"order":2,},
     {"id":{"name":"fMainMenu","path":"fonts/fMainMenu/fMainMenu.yy",},"order":0,},
     {"id":{"name":"rMainMenu","path":"rooms/rMainMenu/rMainMenu.yy",},"order":2,},
     {"id":{"name":"oMainMenu","path":"objects/oMainMenu/oMainMenu.yy",},"order":0,},
     {"id":{"name":"sEmpty","path":"sprites/sEmpty/sEmpty.yy",},"order":0,},
     {"id":{"name":"oPlayer","path":"objects/oPlayer/oPlayer.yy",},"order":3,},
+    {"id":{"name":"oAttack","path":"objects/oAttack/oAttack.yy",},"order":4,},
     {"id":{"name":"oMainMenuButton","path":"objects/oMainMenuButton/oMainMenuButton.yy",},"order":1,},
     {"id":{"name":"oController","path":"objects/oController/oController.yy",},"order":2,},
     {"id":{"name":"rGame","path":"rooms/rGame/rGame.yy",},"order":0,},

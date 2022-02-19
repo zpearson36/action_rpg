@@ -4,7 +4,8 @@ spd = 5
 enum PLAYERSTATES
 {
 	IDLE,
-	WALKING
+	WALKING,
+	ATTACK
 }
 state = PLAYERSTATES.IDLE
 
@@ -22,3 +23,4 @@ enum FACING
 
 facing = FACING.DOWN
 subimg = 0
+attack = undefined
