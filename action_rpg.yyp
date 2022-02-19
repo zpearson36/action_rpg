@@ -6,6 +6,7 @@
     {"id":{"name":"rLoadScreen","path":"rooms/rLoadScreen/rLoadScreen.yy",},"order":1,},
     {"id":{"name":"sAttack","path":"sprites/sAttack/sAttack.yy",},"order":2,},
     {"id":{"name":"fMainMenu","path":"fonts/fMainMenu/fMainMenu.yy",},"order":0,},
+    {"id":{"name":"oUtility","path":"objects/oUtility/oUtility.yy",},"order":3,},
     {"id":{"name":"rMainMenu","path":"rooms/rMainMenu/rMainMenu.yy",},"order":2,},
     {"id":{"name":"oMainMenu","path":"objects/oMainMenu/oMainMenu.yy",},"order":0,},
     {"id":{"name":"sEmpty","path":"sprites/sEmpty/sEmpty.yy",},"order":0,},
