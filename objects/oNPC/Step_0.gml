@@ -5,6 +5,19 @@
 if(target != undefined)
 {
 	var t_direction = point_direction(x, y, target.x, target.y)
+	if     (t_direction >=   0 and t_direction <  30) facing = FACING.RIGHT
+	else if(t_direction >=  30 and t_direction <  60) facing = FACING.UPRIGHT
+	else if(t_direction >=  60 and t_direction < 120) facing = FACING.UP
+	else if(t_direction >= 120 and t_direction < 150) facing = FACING.UPLEFT
+	else if(t_direction >= 150 and t_direction < 210) facing = FACING.LEFT
+	else if(t_direction >= 210 and t_direction < 240) facing = FACING.DOWNLEFT
+	else if(t_direction >= 240 and t_direction < 300) facing = FACING.DOWN
+	else if(t_direction >= 300 and t_direction < 330) facing = FACING.DOWNRIGHT
+	else if(t_direction >= 330 and t_direction < 360) facing = FACING.RIGHT
+	
+	alarm[0] = -1
+	alarm[2] = -1
+	state = PLAYERSTATES.WALKING
 }
 switch(state)
 {
