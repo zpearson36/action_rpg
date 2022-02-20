@@ -20,7 +20,7 @@ var l3x2 = 0
 var l3y2 = 0
 var spritesize = 64
 var sightrange = 300
-var sightwidth = 150
+var sightwidth = 300
 switch(facing)
 {
 	case FACING.UP:
