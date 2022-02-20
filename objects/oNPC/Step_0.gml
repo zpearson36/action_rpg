@@ -2,7 +2,10 @@
 // You can write your code in this editor
 /// @description Insert description here
 // You can write your code in this editor
-
+if(target != undefined)
+{
+	var t_direction = point_direction(x, y, target.x, target.y)
+}
 switch(state)
 {
 	case PLAYERSTATES.IDLE:
