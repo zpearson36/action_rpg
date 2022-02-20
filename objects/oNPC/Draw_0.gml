@@ -8,8 +8,6 @@ if(target != undefined)
 	draw_text( 50, 50, point_direction(x, y, target.x, target.y))
 }
 
-
-
 var x1 = 0
 var y1 = 0
 var l1x2 = 0

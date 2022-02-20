@@ -205,53 +205,125 @@ switch(state)
 		{
 			case FACING.UP:
 			{
-				y -= spd
+				if(collision_circle(x, y - spd, sprite_size / 2, oCollidable, false, true))
+				{
+					while(not collision_circle(x, y - 1, sprite_size / 2, oCollidable, false, true))
+					{
+						y--
+					}
+				}
+				else y -= spd
 				subimg = 4
 				break;
 			}
 			case FACING.DOWN:
 			{
-				y += spd
+				if(collision_circle(x, y + spd, sprite_size / 2, oCollidable, false, true))
+				{
+					while(not collision_circle(x, y + 1, sprite_size / 2, oCollidable, false, true))
+					{
+						y++
+					}
+				}
+				else y += spd
 				subimg = 0
 				break;
 			}
 			case FACING.LEFT:
 			{
-				x -= spd
+				if(collision_circle(x - spd, y, sprite_size / 2, oCollidable, false, true))
+				{
+					while(not collision_circle(x - 1, y, sprite_size / 2, oCollidable, false, true))
+					{
+						x--
+					}
+				}
+				else x -= spd
 				subimg = 6
 				break;
 			}
 			case FACING.RIGHT:
 			{
-				x += spd
+				if(collision_circle(x + spd, y, sprite_size / 2, oCollidable, false, true))
+				{
+					while(not collision_circle(x + 1, y, sprite_size / 2, oCollidable, false, true))
+					{
+						x++
+					}
+				}
+				else x += spd
 				subimg = 2
 				break;
 			}
 			case FACING.UPLEFT:
 			{
-				y -= spd * cos(degtorad(45))
-				x -= spd * cos(degtorad(45))
+				if(collision_circle(x - spd * cos(degtorad(45)), y - spd * cos(degtorad(45)), sprite_size / 2, oCollidable, false, true))
+				{
+					while(not collision_circle(x - 1, y - 1, sprite_size / 2, oCollidable, false, true))
+					{
+						x--
+						y--
+					}
+				}
+				else
+				{
+					y -= spd * cos(degtorad(45))
+					x -= spd * cos(degtorad(45))
+				}
 				subimg = 5
 				break;
 			}
 			case FACING.UPRIGHT:
 			{
-				y -= spd * cos(degtorad(45))
-				x += spd * cos(degtorad(45))
+				if(collision_circle(x + spd * cos(degtorad(45)), y - spd * cos(degtorad(45)), sprite_size / 2, oCollidable, false, true))
+				{
+					while(not collision_circle(x + 1, y - 1, sprite_size / 2, oCollidable, false, true))
+					{
+						x++
+						y--
+					}
+				}
+				else
+				{
+					y -= spd * cos(degtorad(45))
+					x += spd * cos(degtorad(45))
+				}
 				subimg = 3
 				break;
 			}
 			case FACING.DOWNLEFT:
 			{
-				y += spd * cos(degtorad(45))
-				x -= spd * cos(degtorad(45))
+				if(collision_circle(x - spd * cos(degtorad(45)), y + spd * cos(degtorad(45)), sprite_size / 2, oCollidable, false, true))
+				{
+					while(not collision_circle(x - 1, y + 1, sprite_size / 2, oCollidable, false, true))
+					{
+						x--
+						y++
+					}
+				}
+				else
+				{
+					y += spd * cos(degtorad(45))
+					x -= spd * cos(degtorad(45))
+				}
 				subimg = 7
 				break;
 			}
 			case FACING.DOWNRIGHT:
 			{
-				y += spd * cos(degtorad(45))
-				x += spd * cos(degtorad(45))
+				if(collision_circle(x + spd * cos(degtorad(45)), y + spd * cos(degtorad(45)), sprite_size / 2, oCollidable, false, true))
+				{
+					while(not collision_circle(x + 1, y + 1, sprite_size / 2, oCollidable, false, true))
+					{
+						x--
+						y--
+					}
+				}
+				else
+				{
+					y += spd * cos(degtorad(45))
+					x += spd * cos(degtorad(45))
+				}
 				subimg = 1
 				break;
 			}

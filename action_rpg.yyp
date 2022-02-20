@@ -1,5 +1,7 @@
 {
   "resources": [
+    {"id":{"name":"oCollidable","path":"objects/oCollidable/oCollidable.yy",},"order":7,},
+    {"id":{"name":"sCollidable","path":"sprites/sCollidable/sCollidable.yy",},"order":4,},
     {"id":{"name":"sPC","path":"sprites/sPC/sPC.yy",},"order":1,},
     {"id":{"name":"oNPC","path":"objects/oNPC/oNPC.yy",},"order":2,},
     {"id":{"name":"sTempBackground","path":"sprites/sTempBackground/sTempBackground.yy",},"order":3,},
