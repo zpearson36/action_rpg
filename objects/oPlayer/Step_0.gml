@@ -315,8 +315,8 @@ switch(state)
 				{
 					while(not collision_circle(x + 1, y + 1, sprite_size / 2, oCollidable, false, true))
 					{
-						x--
-						y--
+						x++
+						y++
 					}
 				}
 				else
