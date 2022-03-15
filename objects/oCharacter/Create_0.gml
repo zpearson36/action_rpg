@@ -25,3 +25,4 @@ facing = FACING.DOWN
 subimg = 0
 attack = undefined
 _health = 10
+dash_multiplyer = 10

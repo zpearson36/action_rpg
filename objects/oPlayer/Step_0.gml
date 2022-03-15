@@ -52,7 +52,7 @@ switch(state)
 			state = PLAYERSTATES.WALKING
 			break;
 		}
-		if(global.move_action)
+		if(global.move_x)
 		{
 			var x_offset = 0
 			var y_offset = 0
@@ -123,8 +123,12 @@ switch(state)
 	}
 	case PLAYERSTATES.WALKING:
 	{
-		
-		if(global.move_action)
+		if(global.move_b)
+		{
+			spd *= dash_multiplyer
+			alarm[1] = 5
+		}
+		if(global.move_x)
 		{
 			var x_offset = 0
 			var y_offset = 0

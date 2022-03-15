@@ -33,17 +33,17 @@ if(keyboard_check_pressed(vk_shift)
 if(keyboard_check_pressed(vk_space)
    or gamepad_button_check_pressed(0,gp_face4))
 {
-	global.move_action = true
+	global.move_y = true
 }
 if(keyboard_check_pressed(vk_tab)
    or gamepad_button_check_pressed(0,gp_face3))
 {
-	global.move_action2 = true
+	global.move_x = true
 }
 if(keyboard_check_pressed(ord("Q"))
    or gamepad_button_check_pressed(0,gp_face2))
 {
-    global.move_takeover  = true
+    global.move_b  = true
 }
 if(keyboard_check_pressed(ord("R"))
    or gamepad_button_check_pressed(0,gp_select))
@@ -53,5 +53,5 @@ if(keyboard_check_pressed(ord("R"))
 if(keyboard_check_pressed(vk_enter)
    or gamepad_button_check_pressed(0,gp_face1))
 {
-	global.move_select = true
+	global.move_a = true
 }

@@ -14,7 +14,7 @@ if(menu_control)
 		menu_control = false
 		alarm[0] = 10
 	}
-	if(global.move_action)
+	if(global.move_a)
 	{
 		menu[menu_cursor].action()
 	}
