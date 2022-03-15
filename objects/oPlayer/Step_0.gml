@@ -1,5 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
+event_inherited()
 switch(state)
 {
 	case PLAYERSTATES.IDLE:
@@ -54,69 +55,7 @@ switch(state)
 		}
 		if(global.move_x)
 		{
-			var x_offset = 0
-			var y_offset = 0
-			var rotation = 0
-			var offset_mag = 64
-			switch(facing)
-			{
-				case FACING.UP:
-				{
-					y_offset = -offset_mag
-					rotation =  90
-					break;
-				}
-				case FACING.DOWN:
-				{
-					y_offset =  offset_mag
-					rotation =  270
-					break;
-				}
-				case FACING.LEFT:
-				{
-					x_offset = -offset_mag
-					rotation =  180
-					break;
-				}
-				case FACING.RIGHT:
-				{
-					x_offset =  offset_mag
-					rotation =  0
-					break;
-				}
-				case FACING.UPLEFT:
-				{
-					x_offset = -offset_mag * cos(degtorad(45))
-					y_offset = -offset_mag * cos(degtorad(45))
-					rotation =  135
-					break;
-				}
-				case FACING.UPRIGHT:
-				{
-					x_offset =  offset_mag * cos(degtorad(45))
-					y_offset = -offset_mag * cos(degtorad(45))
-					rotation =  45
-					break;
-				}
-				case FACING.DOWNLEFT:
-				{
-					x_offset = -offset_mag * cos(degtorad(45))
-					y_offset =  offset_mag * cos(degtorad(45))
-					rotation =  225
-					break;
-				}
-				case FACING.DOWNRIGHT:
-				{
-					x_offset =  offset_mag * cos(degtorad(45))
-					y_offset =  offset_mag * cos(degtorad(45))
-					rotation =  310
-					break;
-				}
-			}
-			attack = instance_create_layer(x + x_offset, y + y_offset, "attack", oAttack)
-			attack.rotation = rotation
-			state = PLAYERSTATES.ATTACK
-			alarm[0] = attack.lifetime
+			state = PLAYERSTATES.WINDUP
 			break;
 		}
 		break;
@@ -130,69 +69,7 @@ switch(state)
 		}
 		if(global.move_x)
 		{
-			var x_offset = 0
-			var y_offset = 0
-			var rotation = 0
-			var offset_mag = 64
-			switch(facing)
-			{
-				case FACING.UP:
-				{
-					y_offset = -offset_mag
-					rotation =  90
-					break;
-				}
-				case FACING.DOWN:
-				{
-					y_offset =  offset_mag
-					rotation =  270
-					break;
-				}
-				case FACING.LEFT:
-				{
-					x_offset = -offset_mag
-					rotation =  180
-					break;
-				}
-				case FACING.RIGHT:
-				{
-					x_offset =  offset_mag
-					rotation =  0
-					break;
-				}
-				case FACING.UPLEFT:
-				{
-					x_offset = -offset_mag * cos(degtorad(45))
-					y_offset = -offset_mag * cos(degtorad(45))
-					rotation =  135
-					break;
-				}
-				case FACING.UPRIGHT:
-				{
-					x_offset =  offset_mag * cos(degtorad(45))
-					y_offset = -offset_mag * cos(degtorad(45))
-					rotation =  45
-					break;
-				}
-				case FACING.DOWNLEFT:
-				{
-					x_offset = -offset_mag * cos(degtorad(45))
-					y_offset =  offset_mag * cos(degtorad(45))
-					rotation =  225
-					break;
-				}
-				case FACING.DOWNRIGHT:
-				{
-					x_offset =  offset_mag * cos(degtorad(45))
-					y_offset =  offset_mag * cos(degtorad(45))
-					rotation =  310
-					break;
-				}
-			}
-			attack = instance_create_layer(x + x_offset, y + y_offset, "attack", oAttack)
-			attack.rotation = rotation
-			state = PLAYERSTATES.ATTACK
-			alarm[0] = attack.lifetime
+			state = PLAYERSTATES.WINDUP
 			break;
 		}
 		if(global.move_left and global.move_up)         facing = FACING.UPLEFT
@@ -333,6 +210,11 @@ switch(state)
 			}
 		}
 		break;
+	}
+	case PLAYERSTATES.WINDUP:
+	{
+		if(attack != undefined) state = PLAYERSTATES.ATTACK
+		break
 	}
 	case PLAYERSTATES.ATTACK:
 	{
