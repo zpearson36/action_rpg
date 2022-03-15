@@ -1,6 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
-draw_sprite_ext(sprite_index, subimg, x, y, 1, 1, 0, c_color, 1)
+event_inherited()
+//draw_sprite_ext(sprite_index, subimg, x, y, 1, 1, 0, c_color, 1)
 /*
 var x1 = 0
 var y1 = 0

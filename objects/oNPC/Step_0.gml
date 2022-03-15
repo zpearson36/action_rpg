@@ -2,6 +2,7 @@
 // You can write your code in this editor
 /// @description Insert description here
 // You can write your code in this editor
+event_inherited()
 if(target != undefined)
 {
 	var t_direction = point_direction(x, y, target.x, target.y)
@@ -17,12 +18,25 @@ if(target != undefined)
 	
 	alarm[0] = -1
 	alarm[2] = -1
-	state = PLAYERSTATES.WALKING
+	
 }
 switch(state)
 {
 	case PLAYERSTATES.IDLE:
 	{
+		if(target != undefined)
+		{
+			if(point_distance(x, y, target.x, target.y) - sprite_size < weapon.reach)
+			{
+				state = PLAYERSTATES.WINDUP
+				break;
+			}
+			else
+			{
+				state = PLAYERSTATES.WALKING
+				break;
+			}
+		}
 		switch(facing)
 		{
 			case FACING.UP:
@@ -70,6 +84,14 @@ switch(state)
 	}
 	case PLAYERSTATES.WALKING:
 	{
+		if(target != undefined)
+		{
+			if(point_distance(x, y, target.x, target.y) - sprite_size < weapon.reach)
+			{
+				state = PLAYERSTATES.WINDUP
+				break;
+			}
+		}
 		switch(facing)
 		{
 			case FACING.UP:
@@ -198,10 +220,5 @@ switch(state)
 			}
 		}
 		break;
-	}
-	case PLAYERSTATES.ATTACK:
-	{
-		if(attack == undefined) state = PLAYERSTATES.IDLE
-		break
 	}
 }
